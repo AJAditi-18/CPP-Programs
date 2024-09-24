@@ -1,0 +1,77 @@
+#include <iostream>
+using namespace std;
+
+class Account{
+    private:
+        int ac_no;
+        float bal;
+    public:
+        void CreateAcc();
+        void Deposit();
+        void Withdraw();
+        void Display();
+};
+
+void Account::CreateAcc(){
+    cout << "\nEnter an account number: ";
+    cin >> ac_no;
+    cout << "\nEnter initial balance: ";
+    cin >> bal;
+    cout << "Account created." << endl;
+}
+
+void Account::Deposit(){
+    float add;
+    cout << "\nEnter sum to be deposited: ";
+    cin >> add;
+    bal = bal + add;
+    cout << "Amount deposited" << endl;
+}
+
+void Account::Withdraw(){
+    float amt;
+    cout << "\nEnter sum to be withdrawn: ";
+    cin >> amt;
+    if (amt > bal) {
+        cout << "Insufficient balance!" << endl;
+    } else {
+        bal = bal - amt;
+        cout << "Amount withdrawn" << endl;
+    }
+}
+
+void Account::Display(){
+    cout << "\nTotal balance in your account is: " << bal << endl;
+}
+
+int main() {
+    Account ac;
+    int choice;
+    char ch;
+    do {
+        cout << "\nSelect an action: \n 1. Create a new Account \n 2. Deposit money \n 3. Withdraw money \n 4. Display Balance\n";
+        cout << "Enter your choice (1-4): ";
+        cin >> choice;
+        switch(choice) {
+            case 1:
+                ac.CreateAcc();
+                break;
+            case 2:
+                ac.Deposit();
+                break;
+            case 3:
+                ac.Withdraw();
+                break;
+            case 4:
+                ac.Display();
+                break;
+            default:
+                cout << "Invalid choice!!!!" << endl;
+        }
+        cout << "\nDo you want to continue?: ";
+        cin >> ch;
+    } while(ch == 'Y' || ch == 'y');
+
+   
+    return 0;
+}
