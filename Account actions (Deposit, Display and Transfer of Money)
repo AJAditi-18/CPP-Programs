@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+class Account{
+    private:
+    int acno; float balance;
+    public:
+    void Deposit();
+    void Display();
+    void Transfer(Account &, float);
+};
+void Account :: Deposit(){
+    cout << "Enter account no. : ";
+    cin >> acno;
+    cout << "Enter initial balance: ";
+    cin >> balance;
+    cout << endl;
+}
+void Account :: Display(){
+    cout << "\nAccount no. : " << acno;
+    cout << "\nBalance: " << balance;
+    cout << endl;
+}
+void Account :: Transfer(Account &ac, float amt){
+    balance = balance - amt;
+    ac.balance = ac.balance + amt;
+} 
+
+int main() {
+    Account ac1, ac2;
+    cout << "Enter info for account 1\n";
+    ac1.Deposit();
+    cout << "Enter info for account 2\n";
+    ac2.Deposit();
+    cout << "\nHere's the account info before transfer";
+    ac1.Display();
+    ac2.Display();
+    float money;
+    cout << "\nEnter amount to be transfered: ";
+    cin >> money;
+    cout << endl;
+    ac1.Transfer(ac2, money);
+    cout << "\nHere's the account info after transfer";
+    ac1.Display();
+    ac2.Display();
+    return 0;
+}
