@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+ 
+    struct Student{
+        string name;
+        int rno;
+        float marks;
+    };
+   
+    int main(){
+        Student st;
+        cout << "Enter name: ";
+        getline(cin, st.name);
+        cout << "Enter roll no: ";
+        cin >> st.rno;
+        cout << "Enter marks; ";
+        cin >> st.marks;
+       
+        cout << "Info \n";
+        cout << "Name: " << st.name << endl;
+        cout << "Roll no: " << st.rno << endl;
+        cout << "Marks: " << st.marks << endl;
+   
+
+    return 0;
+}
