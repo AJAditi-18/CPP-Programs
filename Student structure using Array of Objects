@@ -8,23 +8,24 @@ using namespace std;
     };
    
     int main(){
-        Student st;
-        int n;
+        Student st[5];
+        int n, i;
         cout<< "Enter the number of students: ";
         cin>> n;
-        for(int i=0; i<n; i++){
+        for(i=0; i<n; i++){
         cout << "Enter roll no of Student" << i+1 << ": ";
-        cin >> st.rno;
+        cin >> st[i].rno;
         cout << "Enter name of Student" << i+1 << ": ";
-        cin >> st.name;
+        cin >> st[i].name;
         cout << "Enter marks of Student" << i+1 << ": ";
-        cin >> st.marks;
+        cin >> st[i].marks;
         }
+        
 cout << "Info \n";
-        for(int i=0; i<n; i++){
-        cout << "Name: " << st.name << endl;
-        cout << "Roll no: " << st.rno << endl;
-        cout << "Marks: " << st.marks << endl;
+        for(i=0; i<n; i++){
+        cout << "Name: " << st[i].name << endl;
+        cout << "Roll no: " << st[i].rno << endl;
+        cout << "Marks: " << st[i].marks << endl;
         }
 
     return 0;
