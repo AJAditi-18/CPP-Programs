@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+public:
+    string name; int rno; float marks;
+    void SetData(string n, int rn, float m) {
+        name = n;
+        rno = rn;
+        marks = m;
+    }
+    void PrintDetail() {
+        cout << "Name: " << name << endl;
+        cout << "Roll no: " << rno << endl;
+        cout << "Marks: " << marks << endl;
+    }
+};
+
+int main() {
+    Student st1, st2, st3;
+    st1.SetData("Pikachu", 101, 99.5);
+    st2.SetData("Meganium", 102, 92.0);
+    st3.SetData("Articuno", 103, 98.4);
+    cout << "Student 1:\n";
+    st1.PrintDetail(); cout << endl;
+    cout << "Student 2:\n";
+    st2.PrintDetail();
+    return 0;
+}
