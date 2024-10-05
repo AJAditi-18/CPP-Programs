@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+class Matrix {
+public:
+    int mat[2][2];
+
+    void SetData() {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                cin >> mat[i][j];
+            }
+        }
+    }
+
+    void Display() {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                cout << mat[i][j] << " ";
+            }
+            cout << endl;
+        }
+    }
+
+    Matrix Multiply(Matrix m2) {
+        Matrix res;
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                res.mat[i][j] = 0;
+                for (int k = 0; k < 2; k++) {
+                    res.mat[i][j] += mat[i][k] * m2.mat[k][j];
+                }
+            }
+        }
+        return res;
+    }
+};
+
+int main() {
+    Matrix m1, m2, result;
+
+    cout << "Enter elements for Matrix 1 (2x2):" << endl;
+    m1.SetData();
+
+    cout << "Enter elements for Matrix 2 (2x2):" << endl;
+    m2.SetData();
+
+    result = m1.Multiply(m2);
+
+    cout << "Resultant Matrix after multiplication:" << endl;
+    result.Display();
+
+    return 0;
+}
