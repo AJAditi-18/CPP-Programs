@@ -1,0 +1,33 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+class Song {
+    string Title, Singer;
+public:
+    void SetData(string t, string s) {
+        Title = t; Singer = s;
+    }
+    void Display() {
+        cout << "Title: " << Title << endl;
+		cout<< "\tSinger: " << Singer << endl;
+    }
+};
+int main() {
+    int n;
+    cout << "Enter number of songs: "; cin >> n;
+    cin.ignore();  // Ignore the newline character left in the buffer
+
+    Song songs[n];
+    for (int i = 0; i < n; i++) {
+        string t, s;
+        cout << "Enter title of song " << i + 1 << ": ";
+        getline(cin, t);
+        cout << "Enter the singer's name for song " << i + 1 << ": ";
+        getline(cin, s);
+        songs[i].SetData(t, s);
+    } cout << "\nSong details:\n";
+    for (int i = 0; i < n; i++) {
+        songs[i].Display();
+    } return 0;
+}
