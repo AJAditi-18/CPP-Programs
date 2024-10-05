@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Book {
+public:
+    string title;
+    string author;
+    void Input(string t, string a) {
+        title = t; author = a;
+    }
+    void Display() {
+        cout << "Title: " << title << endl;
+        cout << "Author: " << author << endl;
+        Info();
+    }
+    void Info() {
+        cout  << title << " by " << author << endl;
+    }
+};
+
+int main() {
+    Book b1, b2;
+    b1.Input("Mallory Towers", "Enid Blyton");
+    b2.Input("Pride and Prejudice", "Jane Austen");
+    b1.Display();
+    cout << endl;
+    b2.Display();
+    return 0;
+}
